@@ -4,6 +4,7 @@ public class Note {
     private String header;
     private String body;
     private String[] tags;
+    //should be changed to an expandable collection
 
     public String getHeader()
     {
