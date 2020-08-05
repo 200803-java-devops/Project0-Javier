@@ -1,10 +1,13 @@
 package one;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Note {
     private String header;
     private String body;
-    private String[] tags;
-    //should be changed to an expandable collection
+    List<String> tags = new ArrayList<>();
+
 
     public String getHeader()
     {
@@ -18,9 +21,14 @@ public class Note {
 
     public void getTags()
     {
-        for (int i=0; i<this.tags.length; i++)
+        if (this.tags.size() > 0)
+        for (int i=0; i<this.tags.size(); i++)
         {
-            System.out.println(tags[i]);
+            //output list of tags
+        }
+        else
+        {
+            System.out.println("No tags for this note");
         }
     }
 
