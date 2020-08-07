@@ -10,6 +10,7 @@ public class Note {
     private String header = " ";
     private String body = " ";
     List<String> tags = new ArrayList<>();
+    private static List<String> allTags = new ArrayList<>();
     BufferedReader input;
 
     public Note() {
