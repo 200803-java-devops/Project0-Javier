@@ -7,8 +7,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Note {
+
     private String header = " ";
+    private String headerTOKEN = "HEADER";
     private String body = " ";
+    private String bodyTOKEN = "BODY";
+    private String tagsTOKEN = "TAGS";
     List<String> tags = new ArrayList<>();
     private static List<String> allTags = new ArrayList<>();
     BufferedReader input;
