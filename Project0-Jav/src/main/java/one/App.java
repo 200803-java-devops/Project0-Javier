@@ -6,7 +6,7 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
 
-        Note note = new Note();
+        
         List<Note> noteList = new ArrayList<>();
         int menuChoice = 0;
         boolean exit = false;
@@ -15,6 +15,7 @@ public class App {
         //do{
         
         //1: make a new note
+        Note note = new Note();
         //2: read an existing note
         //  2a: manipulate tags
         //  2b: manipulate body
