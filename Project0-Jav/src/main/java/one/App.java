@@ -8,7 +8,7 @@ public class App {
 
         Note note = new Note();
         List<Note> noteList = new ArrayList<>();
-        int menuChoise = 0;
+        int menuChoice = 0;
         boolean exit = false;
         
         //main menu loop
