@@ -19,8 +19,8 @@ public class App {
         //  2a: manipulate tags
         //  2b: manipulate body
         //  2c: manipulate header
-        //3: exit
-
+        //3: list all tags
+        //4: exit
 
         //} while (!exit)
 
