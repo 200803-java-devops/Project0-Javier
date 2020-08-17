@@ -9,20 +9,9 @@ import java.io.InputStreamReader;
 public class Note {
 
     private String header = " ";
-    private String headerTOKEN = "HEADER";
     private String body = " ";
-    private String bodyTOKEN = "BODY";
-    private String tagsTOKEN = "TAGS";
     List<String> tags = new ArrayList<>();
-    private static List<String> allTags = new ArrayList<>();
-    BufferedReader input;
-
-    public Note() {
-        input = new BufferedReader(new InputStreamReader(System.in));
-        this.setHeader();
-        this.setBody();
-        this.setTags();        
-    }
+    BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 
     public String getHeader() {
         return this.header;
@@ -51,6 +40,10 @@ public class Note {
         }
     }
 
+    public void setHeader(String s) {
+            this.header = s;
+    }
+
     public void setBody() {
         System.out.println("Please enter Note: ");
         try {
@@ -60,6 +53,10 @@ public class Note {
         }
     }
 
+    public void setBody(String s) {
+        this.body = s;
+    }
+
     public void setTags() {
         System.out.println("Please enter a tag: ");
         try {
@@ -67,6 +64,17 @@ public class Note {
         } catch (IOException e) {
             System.out.println("Something Happened while reading from console");
         }
+    }
+
+    public void setTags(String s){
+        this.tags.add(s);
+    }
+
+    public void newNote(){
+        this.setHeader();
+        this.setBody();
+        this.setTags();
+        this.allOut();
     }
 
     public void allOut() {

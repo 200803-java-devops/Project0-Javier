@@ -1,29 +1,44 @@
 package one;
 
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
 
-        
-        List<Note> noteList = new ArrayList<>();
         int menuChoice = 0;
         boolean exit = false;
-        
-        //main menu loop
-        //do{
-        
-        //1: make a new note
-        Note note = new Note();
-        //2: read an existing note
-        //  2a: manipulate tags
-        //  2b: manipulate body
-        //  2c: manipulate header
+        WorkingNote note = new WorkingNote();
+        Scanner scanner = new Scanner(System.in);
+        DB db = new DB();
+
+        // main menu loop
+        do {
+            System.out.println("Please enter option: ");
+                menuChoice = scanner.nextInt();
+
+            switch(menuChoice){
+                case 1://1: make a new note
+                    note.newNote();
+                    note.storeNote();
+                    break;
+                case 2://2: read an existing note
+                    note.loadNote();
+                    break;
+                case 3://exit program
+                    exit = true;
+                    break;
+                default: exit = true; break;
+
+            }
+
         //3: list all tags
         //4: exit
 
-        //} while (!exit)
+        } while (!exit);
+
+        scanner.close();
+        note.allOut();
 
     }
 }

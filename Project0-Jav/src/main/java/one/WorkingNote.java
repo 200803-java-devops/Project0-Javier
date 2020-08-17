@@ -1,6 +1,7 @@
 package one;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -15,7 +16,7 @@ public class WorkingNote extends Note {
     public WorkingNote() {
         try {
             out = new BufferedWriter(new FileWriter(filepath, true));
-            in = new Scanner(filepath);
+            in = new Scanner(new File(filepath));
         } catch (IOException e) {
             System.out.println("Problem opening file for read/write");
         }
@@ -51,5 +52,7 @@ public class WorkingNote extends Note {
             this.setTags(in.next());
         }
         in.reset();
+
+        this.allOut();
     }
 }
