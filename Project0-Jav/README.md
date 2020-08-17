@@ -10,5 +10,6 @@ Function: to make and organize small notes
 ## Setup
 >Must have an sql database named "testdb" with a  
 table "notes" and columns "header" "body" and "tags".  
->###### Must be all lowercase for some reason.
+*Must be all lowercase for some reason.*  
+>
 >And must enter proper url, username, and password into source code(!)
