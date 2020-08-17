@@ -24,11 +24,10 @@ public class DB {
         System.out.println("Opened database successfully");
     }
 
-    public void insert() {
-        String header = " ", body = " ", tags = " ";
+    public void insert(WorkingNote note) {
         try {
             stmt = c.createStatement();
-            String sql = "INSERT INTO Notes (Header, Body, Tags) VALUES ('" + header + "', '" + body + "', '" + tags + "');";
+            String sql = "INSERT INTO Notes (Header, Body, Tags) VALUES ('" + note.getHeader() + "', '" + note.getBody() + "', '" + note.getTags() + "');";
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
             

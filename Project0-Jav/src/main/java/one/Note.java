@@ -21,14 +21,18 @@ public class Note {
         return this.body;
     }
 
-    public void getTags() {
+    public String getTags() {
+        String string = " ";
+
         if (this.tags.size() > 0)
             for (int i = 0; i < this.tags.size(); i++) {
-                System.out.println(this.tags.get(i));
+                string += this.tags.get(i);
             }
         else {
             System.out.println("No tags for this note");
         }
+
+        return string;
     }
 
     public void setHeader() {
@@ -81,6 +85,6 @@ public class Note {
         
         System.out.println(this.getHeader());
         System.out.println(this.getBody());
-        this.getTags();
+        System.out.println(this.getTags());
     }
 }

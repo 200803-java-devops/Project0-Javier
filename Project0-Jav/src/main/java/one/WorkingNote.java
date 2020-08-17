@@ -27,10 +27,7 @@ public class WorkingNote extends Note {
         try{
         out.write(this.getHeader() + "\n");
         out.write(this.getBody() + "\n");
-        for (int i = 0; i < this.tags.size(); i++) {
-            out.write(this.tags.get(i) + ",");
-        }
-        out.write("\n");
+        out.write(this.getTags() + "\n");
         } catch(IOException e){
             System.out.println("Problem writing to file");
             e.printStackTrace();

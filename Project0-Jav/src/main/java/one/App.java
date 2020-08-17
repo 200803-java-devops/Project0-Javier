@@ -11,7 +11,7 @@ public class App {
         WorkingNote note = new WorkingNote();
         Scanner scanner = new Scanner(System.in);
 
-        
+
         DB db = new DB();
 
         // main menu loop
@@ -23,6 +23,7 @@ public class App {
                 case 1://1: make a new note
                     note.newNote();
                     note.storeNote();
+                    db.insert(note);
                     break;
                 case 2://2: read an existing note
                     note.loadNote();
