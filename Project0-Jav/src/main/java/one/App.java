@@ -26,7 +26,18 @@ public class App {
                     db.insert(note);
                     break;
                 case 2://2: read an existing note
-                    note.loadNote();
+                    System.out.println("enter 1 to load from file\n enter 2 to load from database: ");
+                    menuChoice = scanner.nextInt();
+                    switch(menuChoice){
+                        case 1:
+                            note.loadNote();
+                            break;
+                        case 2:
+                            db.select();
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case 3://exit program
                     exit = true;
@@ -41,7 +52,5 @@ public class App {
         } while (!exit);
 
         scanner.close();
-        note.allOut();
-
     }
 }

@@ -36,14 +36,16 @@ public class DB {
    }
 
    public void select(){
+        String header = " ", body = " ", tags = " ";
+
         try {
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM Notes;");
 
             while (rs.next()){
-                String header = rs.getString("Header");
-                String body = rs.getString("Body");
-                String tags = rs.getString("Tags");
+                header = rs.getString("Header");
+                body = rs.getString("Body");
+                tags = rs.getString("Tags");
                 System.out.println(header + "\n" + body + "\n" + tags);
             }
             rs.close();
