@@ -2,14 +2,15 @@ package one;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DB {
     Connection c = null;
-    Statement stmt = null;
-
+    PreparedStatement stmt = null;
+    Statement stmt2 = null;
     public DB() {
         try {
             Class.forName("org.postgresql.Driver");
@@ -26,9 +27,10 @@ public class DB {
 
     public void insert(WorkingNote note) {
         try {
-            stmt = c.createStatement();
-            String sql = "INSERT INTO Notes (Header, Body, Tags) VALUES ('" + note.getHeader() + "', '" + note.getBody() + "', '" + note.getTags() + "');";
-            stmt.executeUpdate(sql);
+            stmt = c.prepareStatement("INSERT INTO Notes (Header, Body, Tags) VALUES (?,?,?)");
+            stmt.setString(1, note.getHeader());
+            stmt.setString(2, note.getBody());
+            stmt.setString(3, note.getTags());
         } catch (SQLException e) {
             
             e.printStackTrace();
@@ -39,8 +41,8 @@ public class DB {
         String header = " ", body = " ", tags = " ";
 
         try {
-            stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM Notes;");
+            stmt2 = c.createStatement();
+            ResultSet rs = stmt2.executeQuery("SELECT * FROM Notes;");
 
             while (rs.next()){
                 header = rs.getString("Header");
