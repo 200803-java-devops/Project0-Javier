@@ -31,6 +31,7 @@ public class DB {
             stmt.setString(1, note.getHeader());
             stmt.setString(2, note.getBody());
             stmt.setString(3, note.getTags());
+            stmt.execute();
         } catch (SQLException e) {
             
             e.printStackTrace();

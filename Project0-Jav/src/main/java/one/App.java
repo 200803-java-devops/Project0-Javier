@@ -21,6 +21,7 @@ public class App {
 
             switch(menuChoice){
                 case 1://1: make a new note
+                    note = new WorkingNote();
                     note.newNote();
                     note.storeNote();
                     db.insert(note);
