@@ -31,6 +31,7 @@ public class App {
                     menuChoice = scanner.nextInt();
                     switch(menuChoice){
                         case 1:
+                        note = new WorkingNote();
                             note.loadNote();
                             break;
                         case 2:
