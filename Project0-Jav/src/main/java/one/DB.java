@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DB {
+public class DB implements Runnable{
     Connection c = null;
     PreparedStatement stmt = null;
     Statement stmt2 = null;
@@ -22,7 +22,7 @@ public class DB {
             System.exit(0);
         }
 
-        System.out.println("Opened database successfully");
+        this.run();
     }
 
     public void insert(WorkingNote note) {
@@ -56,5 +56,10 @@ public class DB {
             
             e.printStackTrace();
         }
+   }
+
+   @Override
+   public void run() {
+      System.out.println("Your princess is in another thread");
    }
 }

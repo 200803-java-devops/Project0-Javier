@@ -11,8 +11,8 @@ public class App {
         WorkingNote note = new WorkingNote();
         Scanner scanner = new Scanner(System.in);
 
-
         DB db = new DB();
+
 
         // main menu loop
         do {
